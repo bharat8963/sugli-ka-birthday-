@@ -1,109 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Happy Birthday, Sugli!</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Happy Birthday, Sugli!</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <!-- Nickname / Password Prompt Section -->
-    <section id="nickname-prompt" style="height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background: linear-gradient(180deg, #e6e6fa 0%, #f0e6ff 100%);">
-        <h2 style="color:#ff69b4; font-family: 'Dancing Script', cursive; font-size: 2.5rem; margin-bottom: 20px;">
-            Phle ye bata mein teko kis naam se bulaata hu😁😛
-        </h2>
-        <input type="text" id="nickname-input" placeholder="Type your answer here..." style="padding: 10px 15px; font-size: 1.2rem; border-radius: 8px; border: 2px solid #ff69b4; max-width: 300px; margin-bottom: 15px;" />
-        <button id="nickname-submit" style="padding: 10px 30px; font-size: 1.2rem; background: #ff69b4; color: white; border: none; border-radius: 25px; cursor: pointer;">
-            Submit
-        </button>
-        <p id="nickname-error" style="color: #ff4d94; font-family: Poppins, sans-serif; margin-top: 10px; display: none;"></p>
-    </section>
+    <!-- Welcome Page Section -->
+    <section id="welcome-page">
+        <h1>Welcome! 🎆</h1>
+        <p>Are you ready?</p>
+        <button id="welcome-enter-btn">Yes, Start!</button>
+        <canvas id="welcome-fireworks"></canvas>
+    </section>
 
-    <!-- Floating Elements -->
-    <div class="hearts"></div>
-    <div class="clouds"></div>
-    <div class="balloons"></div>
+    <!-- Two Questions Section -->
+    <section id="nickname-prompt" style="height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background: linear-gradient(180deg, #e6e6fa 0%, #f0e6ff 100%);">
+        <h2 id="nickname-question" style="color:#ff69b4; font-family: 'Dancing Script', cursive; font-size: 2.5rem; margin-bottom: 20px;">
+            Phle ye bata mein teko kis naam se bulaata hu
+        </h2>
+        <input type="text" id="nickname-input" placeholder="Type your answer here..." style="padding: 10px 15px; font-size: 1.2rem; border-radius: 8px; border: 2px solid #ff69b4; max-width: 300px; margin-bottom: 15px;" />
+        <button id="nickname-submit" style="padding: 10px 30px; font-size: 1.2rem; background: #ff69b4; color: white; border: none; border-radius: 25px; cursor: pointer;">
+            Submit
+        </button>
+        <p id="nickname-error" style="color: #ff4d94; font-family: Poppins, sans-serif; margin-top: 10px; display: none;"></p>
+    </section>
 
-    <!-- Hero Section (Starting Screen) -->
-    <section class="hero hidden">
-        <header>
-            <h2 class="top-title">Happy Birthday Sugli 😜😁</h2>
-        </header>
-        <div class="hero-content">
-            <h1 class="bounce-title">The Cutest Best Friend 😊❤️</h1>
-            <p class="typewriter-subtitle">gyan ka sagar he tu 😛hihi! 💕</p>
-            <button class="enter-button" onclick="showStoryline()">Click to Enter😃 💖👉</button>
-        </div>
-    </section>
+    <!-- Floating Elements -->
+    <div class="hearts"></div>
+    <div class="clouds"></div>
+    <div class="balloons"></div>
 
-    <!-- Storyline Section (Hidden Initially) -->
-    <section class="storyline hidden">
-        <div class="storyline-content">
-            <h2 class="storyline-title">Why You're My Best Friend! 💖</h2>
-            <div class="reason-container">
-                <div class="reason-card" data-index="0" data-extra="You're my sunshine on cloudy days! 🌞">
-                    <span class="star">🌟</span> You always know how to make me laugh, even on my worst days! 😊
-                </div>
-                <div class="reason-card" data-index="1" data-extra="gussa meri vjhe se hoti he or mekoo mnanti he 😅! 🌙">
-                    <span class="star">🌟</span> 😅 gussa meri vjhe se hoti he or mekoo mnanti he 😅
-                    or mein mnane ki jagha khud gussa hoke beth jata hu 😑😑 💕
-                </div>
-                <div class="reason-card" data-index="2" data-extra="Your energy lifts me up! ⚡">
-                    <span class="star">🌟</span> kitni bar bhi naha le rhe gi tu sugli hi 😛, hehehe 💕
-                </div>
-                <div class="reason-card" data-index="3" data-extra="i know tekoo celebrate krna na pasand ye sub 😐😐! 🕵️‍♀️">
-                    <span class="star">🚀</span> - i know tekoo celebrate krna na pasand ye sub😐🙄
-                    but tujhse jayada to mein khush hu 😛
-                </div>
-            </div>
-            <button class="next-button" onclick="nextCard()">Next 💕</button>
-        </div>
-    </section>
+    <!-- Hero Section (Starting Screen) -->
+    <section class="hero hidden">
+        <header>
+            <h2 class="top-title">Happy Birthday Sugli 😜😁</h2>
+        </header>
+        <div class="hero-content">
+            <h1 class="bounce-title">The Cutest Best Friend 😊❤️</h1>
+            <p class="typewriter-subtitle">gyan ka sagar he tu 😛hihi! 💕</p>
+            <button class="enter-button" onclick="showStoryline()">Click to Enter😃 💖👉</button>
+        </div>
+    </section>
 
-    <!-- Wishes Section (Hidden Initially) -->
-    <section class="wishes hidden">
-        <div class="wishes-content">
-            <div class="progress-bar">
-                <div class="progress"></div>
-            </div>
-            <div id="wishes-container"></div>
-            <p id="final-message" style="display: none;">Happy Birthday, Sugli! 🥳</p>
-        </div>
-    </section>
+    <!-- Storyline Section (Hidden Initially) -->
+    <section class="storyline hidden">
+        <div class="storyline-content">
+            <h2 class="storyline-title">Why You're My Best Friend! 💖</h2>
+            <div class="reason-container">
+                <div class="reason-card" data-index="0" data-extra="You're my sunshine on cloudy days! 🌞">
+                    <span class="star">🌟</span> You always know how to make me laugh, even on my worst days! 😊
+                </div>
+                <div class="reason-card" data-index="1" data-extra="gussa meri vjhe se hoti he or mekoo mnanti he 😅! 🌙">
+                    <span class="star">🌟</span> 😅 gussa meri vjhe se hoti he or mekoo mnanti he 😅
+                    or mein mnane ki jagha khud gussa hoke beth jata hu 😑😑 💕
+                </div>
+                <div class="reason-card" data-index="2" data-extra="Your energy lifts me up! ⚡">
+                    <span class="star">🌟</span> kitni bar bhi naha le rhe gi tu sugli hi 😛, hehehe 💕
+                </div>
+                <div class="reason-card" data-index="3" data-extra="i know tekoo celebrate krna na pasand ye sub 😐😐! 🕵️‍♀️">
+                    <span class="star">🚀</span> - i know tekoo celebrate krna na pasand ye sub😐🙄
+                    but tujhse jayada to mein khush hu 😛
+                </div>
+            </div>
+            <button class="next-button" onclick="nextCard()">Next 💕</button>
+        </div>
+    </section>
 
-    <!-- Show Letter Button (Initially hidden) -->
-    <button id="show-letter-button" class="next-button hidden" style="margin: 20px auto; display: block; max-width: 300px;">
-        Show Special Letter 💌
-    </button>
+    <!-- Wishes Section (Hidden Initially) -->
+    <section class="wishes hidden">
+        <div class="wishes-content">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div id="wishes-container"></div>
+            <p id="final-message" style="display: none;">Happy Birthday, Sugli! 🥳</p>
+        </div>
+    </section>
 
-    <!-- Personalized Letter Section (Initially Hidden) -->
-    <section id="letter-section" class="hidden">
-        <div class="letter-content">
-            <h2 class="letter-title">💌 something for you</h2>
-            <div class="letter-box">
-                <p>
-                    Meri pyari Sugli hihi😁,<br /><br />
-                    Tu meri bestfriend hai, jo mujhse badi hai aur har baat bina kahe samajh jaati hai.<br />
-                    Jab kabhi mein confused hota hoon, tu mujhe hamesha guide karti hai.<br />
-                    Aur agar kabhi meri wajah se tu gussa ho jaati hai, toh ulta khud hi mujhe mana bhi leti hai – kitni cute hai na tu!<br /><br />
-                    Sachi , tu meri sabse pyaari dost hai🤗. Tere bina life adhoori hoti.<br /><br />
-                    <b>Happy Birthday, Sugli!</b>i wish ki tere sare sapne pure ho or Hamesha aise hi special, caring aur mast friend bani rehna.<br /><br />
-                    <span style="float:right;">- OGGY😁 </span>
-                </p>
-            </div>
-            <button id="show-fireworks" class="next-button" style="margin-top: 20px;">Show Fireworks 🎆</button>
-        </div>
-        <canvas
-            id="fireworks-canvas"
-            style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 100; pointer-events: none; display: none"
-        ></canvas>
-    </section>
+    <!-- Show Letter Button (Initially hidden) -->
+    <button id="show-letter-button" class="next-button hidden" style="margin: 20px auto; display: block; max-width: 300px;">
+        Show Special Letter 💌
+    </button>
 
-    <!-- External Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script src="script.js"></script>
+    <!-- Personalized Letter Section (Initially Hidden) -->
+    <section id="letter-section" class="hidden">
+        <div class="letter-content">
+            <h2 class="letter-title">💌 something for you</h2>
+            <div class="letter-box">
+                <p>
+                    Meri pyari Sugli hihi😁,<br /><br />
+                    Tu meri bestfriend hai, jo mujhse badi hai aur har baat bina kahe samajh jaati hai.<br />
+                    Jab kabhi mein confused hota hoon, tu mujhe hamesha guide karti hai.<br />
+                    Aur agar kabhi meri wajah se tu gussa ho jaati hai, toh ulta khud hi mujhe mana bhi leti hai – kitni cute hai na tu!<br /><br />
+                    Sachi , tu meri sabse pyaari dost hai🤗. Tere bina life adhoori hoti.<br /><br />
+                    <b>Happy Birthday, Sugli!</b> i wish ki tere sare sapne pure ho or Hamesha aise hi special, caring aur mast friend bani rehna.<br /><br />
+                    <span style="float:right;">- OGGY😁 </span>
+                </p>
+            </div>
+            <button id="show-fireworks" class="next-button" style="margin-top: 20px;">Show Fireworks 🎆</button>
+        </div>
+        <canvas id="fireworks-canvas"></canvas>
+    </section>
+
+    <!-- Cake Celebration feature (Knife/Sound/Cut removed as requested) -->
+    <div id="cake-section" class="hidden">
+        <div id="cake-container"></div>
+        <div id="cake-timer"></div>
+        <!-- Only the cake, candles, confetti, fireworks, party popper appear here -->
+    </div>
+
+    <!-- Floating Elements -->
+    <div class="hearts"></div>
+    <div class="clouds"></div>
+    <div class="balloons"></div>
+
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+    <audio id="bg-music" src="https://audio.jukehost.co.uk/HG23VF2yyHXCOXvOnrfKhI56tuOSStVU.mp3" loop></audio>
+
 </body>
 </html>
-
